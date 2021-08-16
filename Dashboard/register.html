@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://kit.fontawesome.com/51bc2aa7cb.js" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+        
+
+        <title>Register</title>
+    </head>
+    
+    <body class="boody">
+      
+        
+        
+
+            <img src ="assets/img/logo.png" float="left">
+         
+    </div>
+    
+
+</br>
+<div class="login-boxx">
+  <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
+
+  <!--FOR THE SNAPSHOT-->
+  <input type="button" value="Take a Snap" id="btPic" onclick="takeSnapShot()" /> 
+  <p id="snapShot"></p>
+  
+</body>
+
+
+
+    <h1>Register</h1>
+    <div class="textbox">
+      <i class="fas fa-user"></i>
+      <input type="text" placeholder="Name">
+    </div>
+    <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Surname">
+      </div>
+   
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Email">
+      </div>
+
+    <div class="textbox">
+      <i class="fas fa-lock"></i>
+      <input type="password" placeholder="Password">
+    </div>
+    <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder=" Confirm Password">
+      </div>
+
+    <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Admin Code">
+
+      </div>
+      
+</br>
+
+  
+    <a href="insert.html"><input type="button" class="btnn" value="Register"></a>
+  </div>
+
+</div>
+<script>
+  // CAMERA SETTINGS.
+  Webcam.set({
+width: 220,
+      height: 190,
+      image_format: 'jpeg',
+      jpeg_quality: 100
+  });
+  Webcam.attach('#camera');
+
+  // SHOW THE SNAPSHOT.
+  takeSnapShot = function () {
+      Webcam.snap(function (data_uri) {
+          document.getElementById('snapShot').innerHTML = 
+              '<img src="' + data_uri + '" width="70px" height="50px" />';
+      });
+  }
+</script>
+    </body>
+    </html>
